@@ -1,13 +1,13 @@
-<% if action == :new %>
+<% if !cat.persisted? %>
   <% action_url = cats_url %>
+  <% method_to_do = "post" %>
 <% else %>
   <% action_url = cat_url(cat) %>
+  <% method_to_do = "patch" %>
 <% end %>
 
 <form action="<%= action_url %>" method="post">
-  <% if action == :edit %>
-    <input type="hidden" name="_method" value="patch">
-  <% end %>
+    <input type="hidden" name="_method" value="<%= method_to_do %>">
   <label>Name
     <input type="text" name="cat[name]" value="<%= cat.name %>">
   </label>
