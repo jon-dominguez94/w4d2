@@ -15,7 +15,7 @@ class CatRentalRequest < ApplicationRecord
                     .where.not('start_date > :end_date', end_date: self.end_date)
                     .where.not('end_date < ?', self.start_date)
     if !a.empty?
-      self.errors[:base] << "You are already booked."
+      self.errors[:base] << "Cat is already rented during this time"
     end
   end
 end
