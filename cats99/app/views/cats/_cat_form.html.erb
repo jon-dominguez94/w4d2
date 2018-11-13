@@ -1,7 +1,7 @@
 <% if action == :new %>
   <% action_url = cats_url %>
 <% else %>
-  <% action_url = cats_url(cat) %>
+  <% action_url = cat_url(cat) %>
 <% end %>
 
 <form action="<%= action_url %>" method="post">
@@ -9,29 +9,29 @@
     <input type="hidden" name="_method" value="patch">
   <% end %>
   <label>Name
-    <input type="text" name="cat[name]" value="<%= @cat.name %>">
+    <input type="text" name="cat[name]" value="<%= cat.name %>">
   </label>
   <br>
   <label>Birth Date
-    <input type="date" name="cat[birth_date]" value="<%= @cat.birth_date %>">
+    <input type="date" name="cat[birth_date]" value="<%= cat.birth_date %>">
   </label>
   <br>
   <label>Sex
-    <input type="radio" name="cat[sex]" value="M" <%= "checked" if @cat.sex == 'M' %> >M
-    <input type="radio" name="cat[sex]" value="F" <%= "checked" if @cat.sex == 'F' %>>F
+    <input type="radio" name="cat[sex]" value="M" <%= "checked" if cat.sex == 'M' %> >M
+    <input type="radio" name="cat[sex]" value="F" <%= "checked" if cat.sex == 'F' %>>F
   </label>
   <br>
   <label>Color
     <select name="cat[color]">
       <option disabled selected value="">--Select Color--</option>
       <% Cat.colors.each do |color| %>
-      <option value="<%= color %>" <%= "selected" if @cat.color == color %> ><%= color.capitalize %></option>
+      <option value="<%= color %>" <%= "selected" if cat.color == color %> ><%= color.capitalize %></option>
       <% end %>
     </select>
   </label>
   <br>
   <label>Description
-    <textarea name="cat[description]"><%= @cat.description %></textarea>
+    <textarea name="cat[description]"><%= cat.description %></textarea>
   </label>
   <br>
   <input type="submit" name="" value="<%= action == :new ? 'Create cat' : 'Update cat' %>">
