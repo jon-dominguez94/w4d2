@@ -1,6 +1,10 @@
+<% if action == :new %>
+  <% action_url = cats_url %>
+<% else %>
+  <% action_url = cats_url(cat) %>
+<% end %>
 
-
-<form action="index.html" method="post">
+<form action=" <%= action_url %> " method="post">
   <% if action == :edit %>
     <input type="hidden" name="_method" value="patch">
   <% end %>
@@ -30,5 +34,5 @@
     <textarea name="cat[description]"><%= @cat.description %></textarea>
   </label>
   <br>
-  <input type="submit" name="" value="Create cat">
+  <input type="submit" name="" value="<%= action == :new ? 'Create cat' : 'Update cat' %>">
 </form>
