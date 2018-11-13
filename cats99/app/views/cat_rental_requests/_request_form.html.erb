@@ -1,0 +1,24 @@
+<% if !request.persisted? %>
+  <% action_url = cat_rental_requests_url %>
+  <% method_to_do = "post" %>
+<% else %>
+  <% action_url = cat_rental_request_url(request) %>
+  <% method_to_do = "patch" %>
+<% end %>
+
+<form action="<%= action_url %>" method="post">
+    <input type="hidden" name="_method" value="<%= method_to_do %>">
+  <label>Cat ID
+    <input type="text" name="request[cat_id]" value="<%= request.cat_id %>">
+  </label>
+  <br>
+  <label>Start Date
+    <input type="date" name="request[start_date]" value="<%= request.start_date %>">
+  </label>
+  <br>
+  <label>End Date
+    <input type="date" name="request[end_date]" value="<%= request.end_date %>">
+  </label>
+  <br>
+  <input type="submit" name="" value="<%= action == :new ? 'Request Rental' : 'Update rental' %>">
+</form>
