@@ -4,7 +4,7 @@
   <% action_url = cats_url(cat) %>
 <% end %>
 
-<form action=" <%= action_url %> " method="post">
+<form action="<%= action_url %>" method="post">
   <% if action == :edit %>
     <input type="hidden" name="_method" value="patch">
   <% end %>
@@ -25,7 +25,7 @@
     <select name="cat[color]">
       <option disabled selected value="">--Select Color--</option>
       <% Cat.colors.each do |color| %>
-      <option value=" <%= color %> " <%= "selected" if @cat.color == color %> > <%= color.capitalize %> </option>
+      <option value="<%= color %>" <%= "selected" if @cat.color == color %> ><%= color.capitalize %></option>
       <% end %>
     </select>
   </label>

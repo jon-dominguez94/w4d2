@@ -1,12 +1,21 @@
 <h1>Here are our cats!</h1>
 
-<ul>
-  <% @cats.each do |cat| %>
-    <li> Name: <%= cat.name %> </li>
-    <li> Birth_date: <%= cat.birth_date %> </li>
-    <li> Color: <%= cat.color %> </li>
-    <li> Sex: <%= cat.sex %> </li>
-    <li> Description: <%= cat.description %> </li>
-  <% end %>
-  
-</ul>
+<table>
+  <tr>
+    <td>Name</td>
+    <td>Birth Date</td>
+    <td>Color</td>
+    <td>Sex</td>
+    <td>Description</td>
+  </tr>
+<% @cats.each do |cat| %>
+  <tr>
+    <td><%= cat.name %></td>
+    <td><%= cat.birth_date %></td>
+    <td><%= cat.color %></td>
+    <td><%= cat.sex %></td>
+    <td><%= cat.description %></td>
+  </tr>
+<% end %>
+</table>
+
