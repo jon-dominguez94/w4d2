@@ -8,4 +8,9 @@ class CatsController < ApplicationController
     @cat = Cat.find(params[:id])
     render :show
   end
+  
+  def edit
+    @cat =Cat.find(params[:id])
+    render :edit
+  end
 end

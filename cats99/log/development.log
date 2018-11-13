@@ -232,3 +232,141 @@ Processing by CatsController#new as HTML
 Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/cats/1/edit" for 127.0.0.1 at 2018-11-13 14:01:58 -0800
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/edit.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `name' for nil:NilClass:
+  app/views/cats/edit.html.erb:4:in `_app_views_cats_edit_html_erb__1408131841241703594_70221186976000'
+
+Started POST "/__better_errors/2ef372d1199e7d9b/variables" for 127.0.0.1 at 2018-11-13 14:01:58 -0800
+Started GET "/cats/1/edit" for 127.0.0.1 at 2018-11-13 14:02:46 -0800
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.9ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:13
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/edit.html.erb within layouts/application (493.1ms)
+Completed 500 Internal Server Error in 591ms (ActiveRecord: 67.2ms)
+
+
+
+NameError - undefined local variable or method `checked' for #<#<Class:0x00007fbb4f2f0aa0>:0x00007fbb4f2e7040>
+Did you mean?  check_box:
+  app/views/cats/edit.html.erb:12:in `_app_views_cats_edit_html_erb__1408131841241703594_70221232024860'
+  app/controllers/cats_controller.rb:14:in `edit'
+
+Started POST "/__better_errors/3701b41d82b90501/variables" for 127.0.0.1 at 2018-11-13 14:02:47 -0800
+Started GET "/cats/1/edit" for 127.0.0.1 at 2018-11-13 14:03:11 -0800
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (1.0ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:13
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/edit.html.erb within layouts/application (544.9ms)
+Completed 500 Internal Server Error in 557ms (ActiveRecord: 1.0ms)
+
+
+
+NameError - undefined local variable or method `selected' for #<#<Class:0x00007fbb4f2f0aa0>:0x00007fbb4f2bad88>
+Did you mean?  select:
+  app/views/cats/edit.html.erb:20:in `block in _app_views_cats_edit_html_erb__1408131841241703594_70221231934800'
+  app/views/cats/edit.html.erb:19:in `_app_views_cats_edit_html_erb__1408131841241703594_70221231934800'
+  app/controllers/cats_controller.rb:14:in `edit'
+
+Started POST "/__better_errors/346fff8ff1fe11ec/variables" for 127.0.0.1 at 2018-11-13 14:03:12 -0800
+Started GET "/cats/1/edit" for 127.0.0.1 at 2018-11-13 14:03:20 -0800
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:13
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cats/1/" for 127.0.0.1 at 2018-11-13 14:03:29 -0800
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.9ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:8
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/cats/1/edit" for 127.0.0.1 at 2018-11-13 14:03:34 -0800
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.9ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:13
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/cats/1/edit" for 127.0.0.1 at 2018-11-13 14:05:14 -0800
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:13
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cats/1" for 127.0.0.1 at 2018-11-13 14:05:32 -0800
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:8
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cats/1/edit" for 127.0.0.1 at 2018-11-13 14:05:37 -0800
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:13
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cats/1/edit" for 127.0.0.1 at 2018-11-13 14:06:37 -0800
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:13
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cats/1/edit" for 127.0.0.1 at 2018-11-13 14:07:42 -0800
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:13
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cats/1/edit" for 127.0.0.1 at 2018-11-13 14:08:07 -0800
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:13
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.5ms)
+
+
