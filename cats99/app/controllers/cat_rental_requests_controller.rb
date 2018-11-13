@@ -4,4 +4,9 @@ class CatRentalRequestsController < ApplicationController
     @requests = CatRentalRequest.all
     render :index
   end
+  
+  def show
+    @request = CatRentalRequest.find(params[:id])
+    render :show
+  end
 end
