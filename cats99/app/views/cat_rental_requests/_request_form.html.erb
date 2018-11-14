@@ -7,9 +7,14 @@
 <% end %>
 
 <form action="<%= action_url %>" method="post">
+    
     <input type="hidden" name="_method" value="<%= method_to_do %>">
-  <label>Cat ID
-    <input type="text" name="request[cat_id]" value="<%= request.cat_id %>">
+  <label>Cat &nbsp;
+    <select name="request[cat_id]">
+      <% Cat.all.each do |cat| %>
+        <option value="<%= cat.id %>"><%= cat.name %></option>
+      <% end %>
+    </select>
   </label>
   <br>
   <label>Start Date

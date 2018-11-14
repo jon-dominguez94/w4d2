@@ -17,3 +17,34 @@
     <td><%= @cat.description %></td>
   </tr>
 </table>
+
+<table>
+  <tr>
+    <td>Booking ID</td>
+    <td>Start Date</td>
+    <td>End Date</td>
+    <td>Status</td>
+    <td>Approvals</td>
+  </tr>
+  <% CatRentalRequest.all.order(:start_date).each do |crr| %>
+    <% if crr.cat_id == @cat.id %>
+      <tr>
+        <td><%= crr.id %></td>
+        <td><%= crr.start_date %></td>
+        <td><%= crr.end_date %></td>
+        <td><%= crr.status %></td>
+        <td>
+          <form action="<%= approve_cat_rental_request_url(@cat.id) %>" method="post">
+            <input type="hidden" name="_method" value="patch">
+            <input type="submit" name="" value="Approve">
+          </form>
+          <form action="<%= deny_cat_rental_request_url(@cat.id) %>" method="post">
+            <input type="hidden" name="_method" value="patch">
+            <input type="submit" name="" value="Deny">
+          </form>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+    
